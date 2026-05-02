@@ -1,0 +1,130 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #0e0e0e;
+  --fg: #f0ece4;
+  --fg-muted: #888;
+  --accent: #c8b89a;
+  --border: #2a2a2a;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-serif: "Georgia", "Times New Roman", serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+  max-width: 480px;
+  width: 100%;
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-style: italic;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.positioning {
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  color: var(--fg-muted);
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+}
+
+.capture {
+  display: flex;
+  gap: 0;
+  width: 100%;
+  max-width: 380px;
+}
+
+.capture input[type="email"] {
+  flex: 1;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-right: none;
+  color: var(--fg);
+  font-family: inherit;
+  font-size: 0.875rem;
+  padding: 0.75rem 1rem;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.capture input[type="email"]::placeholder {
+  color: var(--fg-muted);
+}
+
+.capture input[type="email"]:focus {
+  border-color: var(--accent);
+}
+
+.capture button {
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  color: var(--bg);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.25rem;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+}
+
+.capture button:hover {
+  opacity: 0.85;
+}
+
+.contact {
+  font-size: 0.8125rem;
+  color: var(--fg-muted);
+}
+
+.contact a {
+  color: var(--fg-muted);
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+}
+
+.contact a:hover {
+  color: var(--fg);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
