@@ -1,130 +1,163 @@
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* Thermal Themes — one-page studio site */
 
 :root {
-  --bg: #0e0e0e;
-  --fg: #f0ece4;
-  --fg-muted: #888;
-  --accent: #c8b89a;
-  --border: #2a2a2a;
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
-  --font-serif: "Georgia", "Times New Roman", serif;
+  --bg: #fafaf8;
+  --ink: #1a1a1a;
+  --ink-muted: #555;
+  --rule: #d4d4d0;
+  --measure: 38rem;
+  --gutter: clamp(1.5rem, 5vw, 3rem);
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-html, body {
-  height: 100%;
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-size: 17px;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   background: var(--bg);
-  color: var(--fg);
+  color: var(--ink);
   font-family: var(--font-sans);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 2rem;
+  font-weight: 400;
+  line-height: 1.55;
+  font-feature-settings: "kern", "liga", "calt";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  text-align: center;
-  max-width: 480px;
-  width: 100%;
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: clamp(3rem, 10vh, 6rem) var(--gutter) clamp(2rem, 6vh, 4rem);
 }
 
-.logo {
+/* ─── Masthead ─────────────────────────────────────────────── */
+
+.masthead {
+  margin-bottom: clamp(3rem, 8vh, 5rem);
+}
+
+.wordmark {
   font-family: var(--font-serif);
-  font-size: clamp(2.5rem, 8vw, 4rem);
-  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-variation-settings: "opsz" 144;
   letter-spacing: -0.02em;
-  color: var(--accent);
-  line-height: 1;
+  line-height: 1.05;
+  margin-bottom: 0.75rem;
 }
 
 .positioning {
-  font-size: clamp(1rem, 2.5vw, 1.125rem);
-  color: var(--fg-muted);
-  letter-spacing: 0.01em;
-  line-height: 1.5;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(1.0625rem, 2vw, 1.1875rem);
+  font-variation-settings: "opsz" 14;
+  color: var(--ink-muted);
+  line-height: 1.4;
 }
 
-.capture {
-  display: flex;
-  gap: 0;
-  width: 100%;
-  max-width: 380px;
+/* ─── Section blocks ───────────────────────────────────────── */
+
+.block {
+  padding-top: clamp(2rem, 5vh, 3rem);
+  padding-bottom: clamp(2rem, 5vh, 3rem);
+  border-top: 1px solid var(--rule);
 }
 
-.capture input[type="email"] {
-  flex: 1;
-  background: transparent;
-  border: 1px solid var(--border);
-  border-right: none;
-  color: var(--fg);
-  font-family: inherit;
-  font-size: 0.875rem;
-  padding: 0.75rem 1rem;
-  outline: none;
-  -webkit-appearance: none;
-}
-
-.capture input[type="email"]::placeholder {
-  color: var(--fg-muted);
-}
-
-.capture input[type="email"]:focus {
-  border-color: var(--accent);
-}
-
-.capture button {
-  background: var(--accent);
-  border: 1px solid var(--accent);
-  color: var(--bg);
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
   text-transform: uppercase;
-  padding: 0.75rem 1.25rem;
-  white-space: nowrap;
-  transition: opacity 0.15s;
+  letter-spacing: 0.14em;
+  color: var(--ink-muted);
+  margin-bottom: 1.25rem;
 }
 
-.capture button:hover {
-  opacity: 0.85;
+.prose p {
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  margin-bottom: 1rem;
 }
+
+.prose p:last-child { margin-bottom: 0; }
+
+/* ─── Approach principles list ─────────────────────────────── */
+
+.principles {
+  display: flex;
+  flex-direction: column;
+  gap: 1.125rem;
+}
+
+.principle {
+  display: block;
+}
+
+.principle dt {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 1.0625rem;
+  font-variation-settings: "opsz" 14;
+  color: var(--ink);
+  display: inline;
+  margin-right: 0.4em;
+}
+
+.principle dd {
+  display: inline;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--ink-muted);
+}
+
+/* ─── Contact ──────────────────────────────────────────────── */
 
 .contact {
-  font-size: 0.8125rem;
-  color: var(--fg-muted);
+  font-size: 1.125rem;
 }
 
 .contact a {
-  color: var(--fg-muted);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-variation-settings: "opsz" 14;
+  color: var(--ink);
   text-decoration: underline;
-  text-decoration-color: var(--border);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--rule);
+  transition: text-decoration-color 200ms ease;
 }
 
 .contact a:hover {
-  color: var(--fg);
+  text-decoration-color: var(--ink);
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+/* ─── Colophon ─────────────────────────────────────────────── */
+
+.colophon {
+  margin-top: clamp(3rem, 8vh, 5rem);
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.8125rem;
+  color: var(--ink-muted);
+  letter-spacing: 0.01em;
+}
+
+/* ─── Slightly tighter on small screens ────────────────────── */
+
+@media (max-width: 480px) {
+  .principle dt,
+  .principle dd {
+    display: block;
+    margin-right: 0;
+  }
+  .principle dt {
+    margin-bottom: 0.25rem;
+  }
 }
