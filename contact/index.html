@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Thermal Themes</title>
+  <meta name="description" content="Contact Thermal Themes. Pre-sales questions, theme support, custom work inquiries. Response within one business day.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter+Tight:wght@400;500;700;900&display=swap">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="grain"></div>
+
+  <header class="bar bar--top">
+    <a class="bar__item bar__link" href="/">THERMAL/THEMES</a>
+    <span class="bar__item bar__item--center">REC 0001 — CHANNEL OPEN</span>
+    <span class="bar__item bar__item--right">EST 2026</span>
+  </header>
+
+  <main class="stage">
+
+    <section class="hero">
+      <div class="hero__chrome">
+        <span class="tick">CH 02</span>
+        <span class="tick">RX READY</span>
+        <span class="tick">RT &lt;24H</span>
+      </div>
+      <h1 class="hero__title">
+        <span class="hero__line">Open</span>
+        <span class="hero__line hero__line--accent">a channel.</span>
+      </h1>
+      <p class="hero__lede">
+        Pre-sales questions, theme support, custom-work inquiries, anything else. We respond within one business day, Monday through Friday.
+      </p>
+    </section>
+
+    <section class="form-section" aria-label="Contact form">
+      <form class="form" action="https://formspree.io/f/FORMSPREE_FORM_ID" method="POST" novalidate>
+        <input type="hidden" name="_next" value="https://thermalthemes.com/contact/thanks/">
+        <input type="hidden" name="_subject" value="thermalthemes.com — new contact form submission">
+
+        <div class="form__row">
+          <div class="field">
+            <label class="field__label" for="name">NAME</label>
+            <input class="field__input" type="text" id="name" name="name" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label class="field__label" for="email">EMAIL</label>
+            <input class="field__input" type="email" id="email" name="email" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="form__row">
+          <div class="field">
+            <label class="field__label" for="theme">REGARDING</label>
+            <select class="field__input field__input--select" id="theme" name="theme" required>
+              <option value="Lacquer">Lacquer</option>
+              <option value="Pre-sales question">Pre-sales question</option>
+              <option value="Custom work">Custom work</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field__label" for="subject">SUBJECT</label>
+            <input class="field__input" type="text" id="subject" name="subject" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="message">MESSAGE</label>
+          <textarea class="field__input field__input--textarea" id="message" name="message" rows="8" required></textarea>
+        </div>
+
+        <div class="field field--honeypot" aria-hidden="true">
+          <label for="_gotcha">Leave this field empty if you're human</label>
+          <input type="text" id="_gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="form__footer">
+          <button class="cta cta--submit" type="submit">
+            <span class="cta__label">Transmit</span>
+            <span class="cta__addr">→</span>
+          </button>
+          <p class="form__note">
+            Or email <a class="form__email" href="mailto:hello@thermalthemes.com">hello@thermalthemes.com</a> directly.
+          </p>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="bar bar--bottom">
+    <span class="bar__item">© THERMAL THEMES</span>
+    <span class="bar__item bar__item--center">SIGNAL/RUNNING</span>
+    <a class="bar__item bar__item--right bar__link" href="/">← STUDIO</a>
+  </footer>
+</body>
+</html>

@@ -346,6 +346,148 @@ body {
   color: var(--ink-dim);
 }
 
+.contact__sub-link {
+  color: var(--ink-mid);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--line-hot);
+  transition: color 200ms ease, border-color 200ms ease;
+}
+
+.contact__sub-link:hover {
+  color: var(--heat);
+  border-bottom-color: var(--heat);
+}
+
+/* ─── Bar link ───────────────────────────────────────────── */
+
+.bar__link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.bar__link:hover { color: var(--heat); }
+
+/* ─── Contact form ───────────────────────────────────────── */
+
+.form-section { position: relative; }
+
+.form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.field { display: flex; flex-direction: column; gap: 0.5rem; position: relative; }
+
+.field__label {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  color: var(--ink-dim);
+  text-transform: uppercase;
+}
+
+.field__input {
+  font-family: var(--display);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  padding: 0.75rem 0.85rem;
+  width: 100%;
+  transition: border-color 200ms ease, background 200ms ease;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.field__input:hover  { border-color: var(--line-hot); }
+.field__input:focus  {
+  outline: none;
+  border-color: var(--heat);
+  background: rgba(255, 90, 31, 0.04);
+}
+
+.field__input::placeholder { color: var(--ink-dim); }
+
+.field__input--textarea {
+  resize: vertical;
+  min-height: 8rem;
+  font-family: var(--display);
+}
+
+.field__input--select {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='%238a877d' d='M0 0l5 6 5-6z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+  padding-right: 2.25rem;
+  cursor: pointer;
+}
+
+.field__input--select:focus {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='%23ff5a1f' d='M0 0l5 6 5-6z'/></svg>");
+}
+
+.field__input:invalid:not(:placeholder-shown):not(:focus) {
+  border-color: #b54a3a;
+}
+
+/* Honeypot — visually hidden, accessibility hidden, off-screen */
+.field--honeypot {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.form__footer {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.cta--submit {
+  cursor: pointer;
+  background: transparent;
+  font: inherit;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+}
+
+.form__note {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-dim);
+  margin: 0;
+}
+
+.form__email {
+  color: var(--ink-mid);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--line-hot);
+  transition: color 200ms ease, border-color 200ms ease;
+}
+
+.form__email:hover {
+  color: var(--heat);
+  border-bottom-color: var(--heat);
+}
+
 /* ─── Mobile tightening ──────────────────────────────────── */
 
 @media (max-width: 600px) {
@@ -363,4 +505,7 @@ body {
     grid-template-columns: 7rem 1fr 2rem;
     gap: 0.75rem;
   }
+
+  .form__row { grid-template-columns: 1fr; gap: 1.25rem; }
+  .form { gap: 1.25rem; }
 }
