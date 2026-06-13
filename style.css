@@ -80,6 +80,13 @@ body {
 .bar__item--center { text-align: center; color: var(--heat); }
 .bar__item--right  { text-align: right; }
 
+.bar__item--nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.25rem;
+}
+
 /* ─── Stage ──────────────────────────────────────────────── */
 
 .stage {
